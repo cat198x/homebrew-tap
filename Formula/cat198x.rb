@@ -1,28 +1,35 @@
 class Cat198x < Formula
   desc "A cross-platform CLI for managing retro gaming ROM collections"
   homepage "https://cat198x.github.io"
-  version "0.5.3"
+  version "0.5.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/cat198x/cat198x/releases/download/v0.5.3/cat198x-aarch64-apple-darwin.tar.xz"
-      sha256 "2cd3eda9d66060b8961216b98c2a7c4de2be1eb831e15e3bc65cd9b79ed7742f"
+      url "https://github.com/cat198x/cat198x/releases/download/v0.5.4/cat198x-aarch64-apple-darwin.tar.xz"
+      sha256 "2296a3e4a9f20c0ca1c80ea162c1d6d1c17b31b12ddab269f4d4a8de3f6e55b3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cat198x/cat198x/releases/download/v0.5.3/cat198x-x86_64-apple-darwin.tar.xz"
-      sha256 "42ab873bd7a42b07068193e1bdd4cafca2d8391abe203aeb2b8333405f4d7723"
+      url "https://github.com/cat198x/cat198x/releases/download/v0.5.4/cat198x-x86_64-apple-darwin.tar.xz"
+      sha256 "baf9041a34b88e7b666edfddea75e4d5494f29b6188db0dc9f2fe138de976970"
     end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/cat198x/cat198x/releases/download/v0.5.3/cat198x-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "15e503988c268be90493f43b8c6f6e40f65bf3f2a7ff763febc3fc72011435c4"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/cat198x/cat198x/releases/download/v0.5.4/cat198x-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "404aab48d7ce8c03f95f53add0f63f01992918d8ef96cab3aca2d8df66fd3527"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/cat198x/cat198x/releases/download/v0.5.4/cat198x-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "6ea4315fb79be0cd424cdf15fa731d69c5a8e3febb05e53793714f10f00e743d"
+    end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":     {},
-    "x86_64-apple-darwin":      {},
-    "x86_64-pc-windows-gnu":    {},
-    "x86_64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
@@ -45,6 +52,9 @@ class Cat198x < Formula
       bin.install "cat198x"
     end
     if OS.mac? && Hardware::CPU.intel?
+      bin.install "cat198x"
+    end
+    if OS.linux? && Hardware::CPU.arm?
       bin.install "cat198x"
     end
     if OS.linux? && Hardware::CPU.intel?
