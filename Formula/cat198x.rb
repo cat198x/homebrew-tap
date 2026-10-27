@@ -1,25 +1,25 @@
 class Cat198x < Formula
   desc "A cross-platform CLI for managing retro gaming ROM collections"
   homepage "https://cat198x.github.io"
-  version "0.5.5"
+  version "0.5.6"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/cat198x/cat198x/releases/download/v0.5.5/cat198x-aarch64-apple-darwin.tar.xz"
-      sha256 "3b8188ca048184f52d8236f52710502a82a84f4431f900930fe6fa4e697aa54c"
+      url "https://github.com/cat198x/cat198x/releases/download/v0.5.6/cat198x-aarch64-apple-darwin.tar.xz"
+      sha256 "655fd1a4a8468c93463a7ed722db8ebc92ca6bc2ace5b3c94814434c5a2cc59a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cat198x/cat198x/releases/download/v0.5.5/cat198x-x86_64-apple-darwin.tar.xz"
-      sha256 "6f591c5e3a58a87595e0e54eea7fcb32311721d4c2d48eb798a0af704af49208"
+      url "https://github.com/cat198x/cat198x/releases/download/v0.5.6/cat198x-x86_64-apple-darwin.tar.xz"
+      sha256 "3b67618e07fde48267a79d6b3f97cc6c8c70f81298e8bfcc0716a683a2209023"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/cat198x/cat198x/releases/download/v0.5.5/cat198x-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "67c01dd31a4cfca8390d1706de5b879c281b3a2e820d718b5bed036560411e68"
+      url "https://github.com/cat198x/cat198x/releases/download/v0.5.6/cat198x-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "3241f55a05b93ef1379baff0765d1592575c582db86a319ac9b5bf90767fb025"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cat198x/cat198x/releases/download/v0.5.5/cat198x-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8b35a8a37f5cb01990d1183149fb5186b21014bf855f4af2c6788e99cb290cf7"
+      url "https://github.com/cat198x/cat198x/releases/download/v0.5.6/cat198x-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "ff6ad90c2a4c6946996dd90c03370ffbb152e9edd7a7ee185def31ed48813552"
     end
   end
   license "MIT"
